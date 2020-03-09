@@ -2,17 +2,17 @@
 package apps
 
 import (
-	"git/inspursoft/board/src/common/k8sassist/corev1/cgv5/types"
-	"git/inspursoft/board/src/common/model"
+	"git/inspursoft/k8sclientdemo/common/k8sassist/corev1/cgv5/types"
+	"git/inspursoft/k8sclientdemo/common/model"
 
 	"github.com/astaxie/beego/logs"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/client-go/kubernetes/typed/apps/v1beta2"
+	"k8s.io/client-go/kubernetes/typed/apps/v1"
 )
 
 type replicasets struct {
 	namespace  string
-	replicaset v1beta2.ReplicaSetInterface
+	replicaset v1.ReplicaSetInterface
 }
 
 func (r *replicasets) Create(rs *model.ReplicaSet) (*model.ReplicaSet, error) {
@@ -81,7 +81,7 @@ func (r *replicasets) List(opts model.ListOptions) (*model.ReplicaSetList, error
 	return modelRSList, nil
 }
 
-func NewReplicaSets(namespace string, replicaset v1beta2.ReplicaSetInterface) *replicasets {
+func NewReplicaSets(namespace string, replicaset v1.ReplicaSetInterface) *replicasets {
 	return &replicasets{
 		namespace:  namespace,
 		replicaset: replicaset,

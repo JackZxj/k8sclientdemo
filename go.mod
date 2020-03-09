@@ -1,4 +1,4 @@
-module git/inspursoft/board/src
+module git/inspursoft/k8sclientdemo
 
 go 1.12
 

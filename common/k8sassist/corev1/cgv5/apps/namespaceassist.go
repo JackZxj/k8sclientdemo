@@ -1,8 +1,8 @@
 package apps
 
 import (
-	"git/inspursoft/board/src/common/k8sassist/corev1/cgv5/types"
-	"git/inspursoft/board/src/common/model"
+	"git/inspursoft/k8sclientdemo/common/k8sassist/corev1/cgv5/types"
+	"git/inspursoft/k8sclientdemo/common/model"
 
 	"github.com/astaxie/beego/logs"
 )

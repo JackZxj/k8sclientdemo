@@ -1,13 +1,13 @@
 package k8sassist
 
 import (
-	v1 "git/inspursoft/board/src/common/k8sassist/corev1"
-	base "git/inspursoft/board/src/common/k8sassist/corev1/cgv5"
+	v1 "git/inspursoft/k8sclientdemo/common/k8sassist/corev1"
+	base "git/inspursoft/k8sclientdemo/common/k8sassist/corev1/cgv5"
 )
 
 type K8sAssistConfig struct {
 	K8sMasterURL   string
-	KubeConfigPath string
+	KubeConfigPath *string
 }
 
 type K8sAssistClient struct {

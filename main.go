@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"git/inspursoft/k8sclientdemo/common/model"
 	"git/inspursoft/k8sclientdemo/common/k8sassist"
@@ -20,8 +21,10 @@ var namespace = model.Namespace{
 
 func main() {
 	var config k8sassist.K8sAssistConfig
-	config.K8sMasterURL = "http://10.110.18.70:8080"
+	config.KubeConfigPath = flag.String("kubeconfig", "./conf/config", "path to the kubeconfig file")
+	flag.Parse()
 	k8sclient := k8sassist.NewK8sAssistClient(&config)
+	
 	ns, err := k8sclient.AppV1().Namespace().Create(&namespace)
 	if err != nil {
 		fmt.Println("update namespace error: ", err.Error())
