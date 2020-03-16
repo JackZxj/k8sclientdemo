@@ -21,7 +21,7 @@ var namespace = model.Namespace{
 
 func main() {
 	var config k8sassist.K8sAssistConfig
-	config.KubeConfigPath = flag.String("kubeconfig", "./conf/config", "path to the kubeconfig file")
+	config.KubeConfigPath = *flag.String("kubeconfig", "./conf/config", "path to the kubeconfig file")
 	flag.Parse()
 	k8sclient := k8sassist.NewK8sAssistClient(&config)
 	

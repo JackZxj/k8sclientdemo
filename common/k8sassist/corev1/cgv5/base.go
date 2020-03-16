@@ -5,11 +5,11 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 )
 
-func NewBaseClient(masterURL string, kubeConfigPath *string) (*kubernetes.Clientset, error) {
+func NewBaseClient(masterURL string, kubeConfigPath string) (*kubernetes.Clientset, error) {
 	
 	// config 获取支持 url 和 path 方式，通过 BuildConfigFromFlags() 函数获取 restclient.Config 对象，用来下边根据该 config 对象创建 client 集合
 	//get config
-	config, err := clientcmd.BuildConfigFromFlags(masterURL, *kubeConfigPath)
+	config, err := clientcmd.BuildConfigFromFlags(masterURL, kubeConfigPath)
 	if err != nil {
 		return nil, err
 	}

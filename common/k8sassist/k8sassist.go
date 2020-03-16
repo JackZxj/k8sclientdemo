@@ -7,7 +7,7 @@ import (
 
 type K8sAssistConfig struct {
 	K8sMasterURL   string
-	KubeConfigPath *string
+	KubeConfigPath string
 }
 
 type K8sAssistClient struct {
